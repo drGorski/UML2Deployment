@@ -1,0 +1,8 @@
+/Users/jakub.bednarski/Develop/corda-generator/src/main/java/pl/gdynia/amw/annotation/TemplateTag.java
+/Users/jakub.bednarski/Develop/corda-generator/src/main/java/pl/gdynia/amw/App.java
+/Users/jakub.bednarski/Develop/corda-generator/src/main/java/pl/gdynia/amw/service/Generator.java
+/Users/jakub.bednarski/Develop/corda-generator/src/main/java/pl/gdynia/amw/dto/GenerationResult.java
+/Users/jakub.bednarski/Develop/corda-generator/src/main/java/pl/gdynia/amw/file/Storage.java
+/Users/jakub.bednarski/Develop/corda-generator/src/main/java/pl/gdynia/amw/model/Node.java
+/Users/jakub.bednarski/Develop/corda-generator/src/main/java/pl/gdynia/amw/template/TemplateFiller.java
+/Users/jakub.bednarski/Develop/corda-generator/src/main/java/pl/gdynia/amw/model/CordaObject.java

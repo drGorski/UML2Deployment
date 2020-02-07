@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6cfb0568-61af-48df-9c0e-34e83050ad89" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="AnnotationType" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1XPFp12zRNIKhYXWYkcIhXnux1I" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/pl/gdynia/amw/template" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/pl/gdynia/amw/template" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6cfb0568-61af-48df-9c0e-34e83050ad89" name="Default Changelist" comment="" />
+      <created>1580940001983</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1580940001983</updated>
+      <workItem from="1580940003254" duration="4158000" />
+      <workItem from="1581023816944" duration="1310000" />
+      <workItem from="1581028916174" duration="3000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="440" y="176" width="811" height="669" key="#Project_Structure" timestamp="1580942592770">
+      <screen x="0" y="23" width="1680" height="976" />
+    </state>
+    <state x="440" y="176" width="811" height="669" key="#Project_Structure/0.23.1680.976@0.23.1680.976" timestamp="1580942592770" />
+    <state x="653" y="227" key="#com.intellij.ide.util.MemberChooser" timestamp="1580942089124">
+      <screen x="0" y="23" width="1680" height="976" />
+    </state>
+    <state x="653" y="227" key="#com.intellij.ide.util.MemberChooser/0.23.1680.976@0.23.1680.976" timestamp="1580942089124" />
+    <state x="341" y="150" key="SettingsEditor" timestamp="1580940309213">
+      <screen x="0" y="23" width="1680" height="976" />
+    </state>
+    <state x="341" y="150" key="SettingsEditor/0.23.1680.976@0.23.1680.976" timestamp="1580940309213" />
+  </component>
+</project>
