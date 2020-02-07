@@ -1,6 +1,6 @@
 package pl.gdynia.amw.annotation;
 
-import lombok.AccessLevel;
+import pl.gdynia.amw.dictionary.TaggedValues;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -9,7 +9,8 @@ import java.lang.annotation.Target;
 
 @Target({ElementType.FIELD, ElementType.METHOD})
 @Retention(RetentionPolicy.SOURCE)
-public @interface TemplateTag {
+public @interface TaggedValue {
 
-    String value();
+    TaggedValues taggedValue();
+
 }
