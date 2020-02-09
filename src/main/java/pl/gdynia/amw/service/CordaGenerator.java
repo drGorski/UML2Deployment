@@ -15,7 +15,7 @@ public class CordaGenerator {
 
     public GenerationResult generate(String destination, Collection<Node> objects) {
         try {
-            String deployNodesTask = NodeGenerator.getInstance().generateDeployNodesTask(objects);
+            NodeGenerator.getInstance().generateDeployNodesTask(destination, objects);
         } catch (Exception e) {
             return GenerationResult
                     .builder()
