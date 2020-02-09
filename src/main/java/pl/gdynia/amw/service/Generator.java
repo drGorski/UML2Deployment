@@ -3,7 +3,7 @@ package pl.gdynia.amw.service;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import pl.gdynia.amw.dto.GenerationResult;
-import pl.gdynia.amw.model.CordaObject;
+import pl.gdynia.amw.model.node.Node;
 
 import java.util.Collection;
 
@@ -12,7 +12,7 @@ public class Generator {
 
     private static Generator INSTANCE;
 
-    public GenerationResult generate(String destination, Collection<CordaObject> objects) {
+    public GenerationResult generate(String destination, Collection<Node> objects) {
         objects.stream().forEach(object -> {
             //TODO generate result files
         });
