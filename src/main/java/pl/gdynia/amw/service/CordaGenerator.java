@@ -8,21 +8,19 @@ import pl.gdynia.amw.model.node.Node;
 import java.util.Collection;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class Generator {
+public class CordaGenerator {
 
-    private static Generator INSTANCE;
+    private static CordaGenerator INSTANCE;
 
     public GenerationResult generate(String destination, Collection<Node> objects) {
-        objects.stream().forEach(object -> {
-            //TODO generate result files
-        });
+        String deployNodesTask = NodeGenerator.getInstance().generateDeployNodesTask(objects);
 
         return new GenerationResult();
     }
 
-    public static Generator getInstance() {
+    public static CordaGenerator getInstance() {
         if (INSTANCE == null) {
-            INSTANCE = new Generator();
+            INSTANCE = new CordaGenerator();
         }
 
         return INSTANCE;
