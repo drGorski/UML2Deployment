@@ -14,4 +14,5 @@ node {
         devMode <!--devMode-->
         rpcUsers <!--rpcUsers-->
         sshdPort <!--sshd.port-->
+        <!--notary-->
     }
