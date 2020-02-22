@@ -1,29 +1,87 @@
 myLegalName = "<!--myLegalName-->"
-additionalP2PAddresses = []
-crlCheckSoftFail = true
+additionalP2PAddresses = <!--additionalP2PAddresses-->
+attachmentContentCacheSizeMegaBytes = <!--attachmentContentCacheSizeMegaBytes-->
+attachmentCacheBound = <!--attachmentCacheBound-->
+blacklistedAttachmentSigningKeys = <!--blacklistedAttachmentSigningKeys-->
+cordappSignerKeyFingerprintBlacklist = <!--cordappSignerKeyFingerprintBlacklist-->
+crlCheckSoftFail = <!--crlCheckSoftFail-->
+custom = {
+    jvmArgs = <!--custom.jvmArgs-->
+}
 database = {
-    transactionIsolationLevel = "REPEATABLE_READ"
-    exportHibernateJMXStatistics = "false"
+    transactionIsolationLevel = <!--database.transactionIsolationLevel-->
+    exportHibernateJMXStatistics = <!--database.exportHibernateJMXStatistics-->
+    initialSchema = <!--database.initialiseSchema-->
+    initialAppSchema = <!--database.initialiseAppSchema-->
+
 }
 dataSourceProperties = {
-    dataSourceClassName = org.h2.jdbcx.JdbcDataSource
-    dataSource.url = "jdbc:h2:file:"${baseDirectory}"/persistence;DB_CLOSE_ON_EXIT=FALSE;WRITE_DELAY=0;LOCK_TIMEOUT=10000"
-    dataSource.user = sa
-    dataSource.password = ""
+    dataSourceClassName = <!--dataSourceProperties.dataSourceClassName-->
+    dataSource.url = <!--dataSourceProperties.dataSource.url-->
+    dataSource.user = <!--dataSourceProperties.dataSource.user-->
+    dataSource.password = <!--dataSourceProperties.dataSource.password-->
 }
-emailAddress = "admin@company.com"
+detectPublicIp = <!--detectPublicIp-->
+devMode = <!--devMode-->
+emailAddress = <!--emailAddress-->
+extraNetworkMapKeys = <!--extraNetworkMapKeys-->
+flowMonitorPeriodMillis = <!--flowMonitorPeriodMillis-->
+flowMonitorSuspensionLoggingThresholdMillis = <!--flowMonitorSuspensionLoggingThresholdMillis-->
 flowTimeout {
-    timeout = 30 seconds
-    maxRestartCount = 6
-    backoffBase = 1.8
+    timeout = <!--flowTimeout.timeout-->
+    maxRestartCount = <!--flowTimeout.maxRestartCount-->
+    backoffBase = <!--flowTimeout.backoffBase-->
 }
-jmxReporterType = JOLOKIA
-keyStorePassword = "cordacadevpass"
-lazyBridgeStart = true
+h2Settings = <!--h2Settings-->
+jarDirs = <!--jarDirs-->
+jmxMonitoringHttpPort = <!--jmxMonitoringHttpPort-->
+jmxReporterType = <!--jmxReporterType-->
+keyStorePassword = <!--keyStorePassword-->
+lazyBridgeStart = <!--lazyBridgeStart-->
+messagingServerAddress = <!--messagingServerAddress-->
+messagingServerExternal = <!--messagingServerExternal-->
+notary = {
+	validating = <!--notary.validating-->
+	serviceLegalName = <!--notary.serviceLegalName-->
+	raft = {
+		nodeAddress= <!--notary.raft.nodeAddress-->
+		clusterAddresses = <!--notary.raft.clusterAddresses-->
+	}
+	bftSMaRt = {
+		replicaId = <!--notary.bftSMaRt.replicaId-->
+		clusterAddresses = <!--notary.dftSMaRt.clusterAddresses-->
+	}
+}
+networkParameterAcceptanceSettings = {
+	autoAcceptEnabled = <!--networkParameterAcceptanceSettings.autoAcceptEnabled-->
+	excludedAutoAcceptableParameters = <!--networkParameterAcceptanceSettings.excludedAutoAcceptableParameters-->
+
+}
+networkServices = {
+	doormanURL = <!--networkServices.doormanURL-->
+	networkMapURL = <!--networkServices.networkMapURL-->
+	pnm = <!--networkServices.pnm-->
+}
+p2pAddress = <!--p2pAddress-->
 rpcSettings = {
-    useSsl = false
-    standAloneBroker = false
+	address = <!--rpcSettings.address-->
+	adminAddress = <!--rpcSettings.adminAddress-->
+	standAloneBroker = <!--rpcSettings.standAloneBroker-->
+    useSsl = <!--rpcSettings.useSsl-->
+    ssl = {
+    	keyStorePath = <!--rpcSettings.ssl.keyStorePath-->
+    	keyStorePassword = <!--rpcSettings.ssl.keyStorePassword-->
+    }
 }
-trustStorePassword = "trustpass"
-useTestClock = false
-verifierType = InMemory
+rpcUsers = <!--rpcUsers-->
+security = <!--security-->
+sshd = {
+	port = <!--sshd.port-->
+}
+systemProperties = <!--systemProperties-->
+transactionCacheSizeMegaBytes = <!--transactionCacheSizeMegaBytes-->
+tlsCertCrlDistPoint = <!--tlsCertCrlDistPoint-->
+tlsCertCrlIssuer = <!--tlsCertCrlIssuer-->
+trustStorePassword = <!--trustStorePassword-->
+useTestClock = <!--useTestClock-->
+verifierType = <!--verfierType-->

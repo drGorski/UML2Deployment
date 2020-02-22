@@ -1,21 +1,24 @@
-        node {
-                name "<!--myLegalName-->"
-                p2pAddress "<!--p2pAddress-->"
-                rpcSettings {
-                    address "<!--rpcSettings.address-->"
-                    adminAddress "<!--rpcSettings.adminAddress-->"
-                    standAloneBroker <!--rpcSettings.standAloneBroker-->
-                    useSsl <!--rpcSettings.useSsl-->
-                    ssl {
-                        keyStorePath "<!--rpcSettings.ssl.keyStorePath-->"
-                        keyStorePassword "<!--rpcSettings.ssl.keyStorePassword-->"
-                    }
+    node {
+            name "<!--myLegalName-->"
+            p2pAddress "<!--p2pAddress-->"
+            rpcSettings {
+                address "<!--rpcSettings.address-->"
+                adminAddress "<!--rpcSettings.adminAddress-->"
+                standAloneBroker <!--rpcSettings.standAloneBroker-->
+                useSsl <!--rpcSettings.useSsl-->
+                ssl {
+                    keyStorePath "<!--rpcSettings.ssl.keyStorePath-->"
+                    keyStorePassword "<!--rpcSettings.ssl.keyStorePassword-->"
                 }
-                devMode <!--devMode-->
-                rpcUsers <!--rpcUsers-->
-                sshdPort <!--sshd.port-->
-                notary = [
-                            validating : <!--notary.validating-->,
-                            serviceLegalName : "<!--notary.serviceLegalName-->"
-                ]
-        }
+            }
+            devMode <!--devMode-->
+            rpcUsers <!--rpcUsers-->
+            sshdPort <!--sshd.port-->
+            notary = [
+                validating : <!--notary.validating-->,
+                serviceLegalName : "<!--notary.serviceLegalName-->"
+            ]
+    }
+
+
+

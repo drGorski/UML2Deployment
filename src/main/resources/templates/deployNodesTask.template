@@ -1,4 +1,4 @@
 task deployNodes(type: net.corda.plugins.Cordform, dependsOn: ['jar']) {
-    directory "./build/cordaNodes"
-    <!--cordaNodes-->
+    directory "./build/nodes"
+    <!--nodes-->
 }
