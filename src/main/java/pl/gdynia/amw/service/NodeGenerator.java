@@ -4,6 +4,7 @@ import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 import pl.gdynia.amw.consts.Consts;
+import pl.gdynia.amw.dictionary.TemplateTagsEnum;
 import pl.gdynia.amw.file.Storage;
 import pl.gdynia.amw.model.node.CordaNode;
 import pl.gdynia.amw.model.node.NotaryCordaNode;
@@ -11,6 +12,8 @@ import pl.gdynia.amw.model.node.NotaryCordaNode;
 import java.util.Collection;
 import java.util.Map;
 
+import static pl.gdynia.amw.consts.Consts.CONFIG_FILE_EXTENSION;
+import static pl.gdynia.amw.consts.Consts.GRALDE_RESULT_FILE;
 import static pl.gdynia.amw.service.TemplateManager.*;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
@@ -20,25 +23,24 @@ public class NodeGenerator {
 
     public void generateDeployNodesTask(String destination, Collection<CordaNode> cordaNodes) {
         String deployNodesTask = TemplateManager.getInstance().readTemplate(DEPLOY_NODES_TASK_TEMPLATE);
-        String singleNode = TemplateManager.getInstance().readTemplate(DEPLOY_NODES_TASK_NODE_TEMPLATE);
-        String notarySection = TemplateManager.getInstance().readTemplate(DEPLOY_NODES_TASK_NODE_NOTARY_SECTION_TEMPLATE);
 
-        String nodesStr = StringUtils.EMPTY;
-        for (CordaNode cordaNode : cordaNodes) {
-            String currentNode = singleNode;
-            currentNode = currentNode.replaceAll("<!--notary-->", cordaNode instanceof NotaryCordaNode ? notarySection : "");
-            currentNode = populateTemplateWithTags(currentNode, cordaNode.getProperties());
-            nodesStr = nodesStr + Consts.NEW_LINE + currentNode;
+        StringBuilder  nodesStr = new StringBuilder(StringUtils.EMPTY);
+        cordaNodes.forEach(cordaNode -> {
+            String nodeTemplatePath = (cordaNode instanceof NotaryCordaNode) ? DEPLOY_NODES_TASK_NODE_NOTARY_TEMPLATE : DEPLOY_NODES_TASK_NODE_TEMPLATE;
+            String currentNode = populateTemplateWithTags(TemplateManager.getInstance().readTemplate(nodeTemplatePath), cordaNode.getProperties());
+            nodesStr.append(Consts.NEW_LINE);
+            nodesStr.append(currentNode);
             generateNodeConfigFiles(destination, cordaNode);
-        }
+        });
 
-         Storage.getInstance().storeFile(destination, deployNodesTask.replaceAll("<!--nodes-->", nodesStr), "deployNodesTask.gradle");
+         Storage.getInstance()
+                 .storeFile(destination, deployNodesTask.replaceAll(TemplateTags.getInstance().buildTemplateTag(TemplateTagsEnum.nodes), nodesStr.toString()), GRALDE_RESULT_FILE);
     }
 
     public void generateNodeConfigFiles(String destination, CordaNode cordaNode) {
-        String nodeConfig = TemplateManager.getInstance().readTemplate(NODE_CONFIG_TEMPLATE);
-        nodeConfig = populateTemplateWithTags(nodeConfig, cordaNode.getProperties());
-        Storage.getInstance().storeFile(destination, nodeConfig, cordaNode.getName()+".config");
+        String templatePath = (cordaNode instanceof NotaryCordaNode) ? NODE_NOTARY_CONFIG_TEMPLATE : NODE_CONFIG_TEMPLATE;
+        String nodeConfig = populateTemplateWithTags(TemplateManager.getInstance().readTemplate(templatePath), cordaNode.getProperties());
+        Storage.getInstance().storeFile(destination, nodeConfig, cordaNode.getName() + CONFIG_FILE_EXTENSION);
     }
 
     private String populateTemplateWithTags(String template, Map<String, Object> tagsAndValues) {
@@ -58,8 +60,6 @@ public class NodeGenerator {
         }
 
         return object.toString();
-
-
     }
 
     protected static NodeGenerator getInstance() {

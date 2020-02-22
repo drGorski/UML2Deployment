@@ -14,8 +14,9 @@ public class TemplateManager {
 
     public static final String DEPLOY_NODES_TASK_TEMPLATE = "templates/deployNodesTask.template";
     public static final String DEPLOY_NODES_TASK_NODE_TEMPLATE = "templates/deployNodesTask_node.template";
-    public static final String DEPLOY_NODES_TASK_NODE_NOTARY_SECTION_TEMPLATE = "templates/deployNodesTask_notaryNode.template";
+    public static final String DEPLOY_NODES_TASK_NODE_NOTARY_TEMPLATE = "templates/deployNodesTask_notaryNode.template";
     public static final String NODE_CONFIG_TEMPLATE = "templates/nodeConfig.template";
+    public static final String NODE_NOTARY_CONFIG_TEMPLATE = "templates/notaryNodeConfig.template";
 
     private static TemplateManager INSTANCE = new TemplateManager();
 
