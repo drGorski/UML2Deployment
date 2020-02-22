@@ -1,4 +1,0 @@
-        notary = [
-            validating : <!--notary.validating-->,
-            serviceLegalName : "<!--notary.serviceLegalName-->"
-        ]

@@ -2,6 +2,7 @@ package pl.gdynia.amw.dictionary;
 
 
 import org.apache.commons.io.FileUtils;
+import pl.gdynia.amw.consts.Consts;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,6 +15,14 @@ public abstract class Dictionary{
 
     private Map<String, DictionaryEntry> entries;
 
+    protected Dictionary() {
+        try {
+            loadDictionary();
+        } catch (Exception e) {
+            throw new IllegalArgumentException(e.getMessage());
+        }
+    }
+
     public Collection<DictionaryEntry> getValues() {
         return entries.values();
     }
@@ -22,9 +31,11 @@ public abstract class Dictionary{
         return entries.get(key);
     }
 
-    protected void loadDictionary(String fileName) throws IOException {
+    protected void loadDictionary() throws IOException {
         entries = new HashMap<>();
-        File file = new File(getClass().getClassLoader().getResource(fileName).getFile());
-        FileUtils.readLines(file, Charset.forName("UTF-8")).forEach(entry -> entries.put(entry, new DictionaryEntry(entry)));
+        File file = new File(getClass().getClassLoader().getResource(getDictPath()).getFile());
+        FileUtils.readLines(file, Charset.forName(Consts.UTF_8)).forEach(entry -> entries.put(entry, new DictionaryEntry(entry)));
     }
+
+    protected abstract String getDictPath();
 }

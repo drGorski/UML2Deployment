@@ -4,12 +4,11 @@ public class TaggedValuesDict extends Dictionary {
 
     private static TaggedValuesDict INSTANCE = new TaggedValuesDict();
 
-    private TaggedValuesDict() {
-        try {
-            loadDictionary("taggedValues.dict");
-        } catch (Exception e) {
-            throw new IllegalArgumentException(e.getMessage());
-        }
+    private static final String DICT_PATH = "dictionaries/taggedValues.dict";
+
+    @Override
+    protected String getDictPath() {
+        return DICT_PATH;
     }
 
     public static TaggedValuesDict getInstance() {

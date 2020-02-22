@@ -11,7 +11,7 @@ import java.util.Map;
 
 @NoArgsConstructor
 @EqualsAndHashCode
-public class Node implements CordaObject {
+public class CordaNode implements CordaObject {
 
     @Getter @Setter private String name;
     @Getter private Map<String, Object> properties = new HashMap<>();
