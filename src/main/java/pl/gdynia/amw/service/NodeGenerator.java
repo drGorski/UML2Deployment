@@ -48,7 +48,7 @@ public class NodeGenerator {
             String key = entry.getKey();
             Object value = entry.getValue();
             String tag = TemplateTags.getInstance().buildTemplateTag(key);
-            template = template.replaceAll(tag, getValueAsString(tag, value));
+            template = template.replace(tag, getValueAsString(tag, value));
         }
 
         return template;
