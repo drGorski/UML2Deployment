@@ -59,7 +59,7 @@ public class NodeGenerator {
             return tag;
         }
 
-        return object.toString();
+        return object.toString().trim();
     }
 
     protected static NodeGenerator getInstance() {
