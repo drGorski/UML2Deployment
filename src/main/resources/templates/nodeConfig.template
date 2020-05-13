@@ -11,8 +11,8 @@ custom = {
 database = {
     transactionIsolationLevel = <!--database.transactionIsolationLevel-->
     exportHibernateJMXStatistics = <!--database.exportHibernateJMXStatistics-->
-    initialSchema = <!--database.initialiseSchema-->
-    initialAppSchema = <!--database.initialiseAppSchema-->
+    initialiseSchema = <!--database.initialiseSchema-->
+    initialiseAppSchema = <!--database.initialiseAppSchema-->
 
 }
 dataSourceProperties = {
@@ -37,7 +37,6 @@ jarDirs = <!--jarDirs-->
 jmxMonitoringHttpPort = <!--jmxMonitoringHttpPort-->
 jmxReporterType = <!--jmxReporterType-->
 keyStorePassword = <!--keyStorePassword-->
-lazyBridgeStart = <!--lazyBridgeStart-->
 messagingServerAddress = <!--messagingServerAddress-->
 messagingServerExternal = <!--messagingServerExternal-->
 networkParameterAcceptanceSettings = {
@@ -71,5 +70,3 @@ transactionCacheSizeMegaBytes = <!--transactionCacheSizeMegaBytes-->
 tlsCertCrlDistPoint = <!--tlsCertCrlDistPoint-->
 tlsCertCrlIssuer = <!--tlsCertCrlIssuer-->
 trustStorePassword = <!--trustStorePassword-->
-useTestClock = <!--useTestClock-->
-verifierType = <!--verfierType-->
