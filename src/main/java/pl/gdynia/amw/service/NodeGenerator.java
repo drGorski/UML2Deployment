@@ -5,7 +5,7 @@ import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 import pl.gdynia.amw.consts.Consts;
 import pl.gdynia.amw.dictionary.TemplateTagsEnum;
-import pl.gdynia.amw.file.Storage;
+import pl.gdynia.amw.model.Destination;
 import pl.gdynia.amw.model.node.CordaNode;
 import pl.gdynia.amw.model.node.NotaryCordaNode;
 
@@ -21,7 +21,7 @@ public class NodeGenerator {
 
     private static NodeGenerator INSTANCE = new NodeGenerator();
 
-    public void generateDeployNodesTask(String destination, Collection<CordaNode> cordaNodes) {
+    public void generateDeployNodesTask(Destination destination, Collection<CordaNode> cordaNodes) {
         String deployNodesTask = TemplateManager.getInstance().readTemplate(DEPLOY_NODES_TASK_TEMPLATE);
 
         StringBuilder  nodesStr = new StringBuilder(StringUtils.EMPTY);
@@ -33,14 +33,13 @@ public class NodeGenerator {
             generateNodeConfigFiles(destination, cordaNode);
         });
 
-         Storage.getInstance()
-                 .storeFile(destination, deployNodesTask.replaceAll(TemplateTags.getInstance().buildTemplateTag(TemplateTagsEnum.nodes), nodesStr.toString()), GRALDE_RESULT_FILE);
+        destination.store(deployNodesTask.replaceAll(TemplateTags.getInstance().buildTemplateTag(TemplateTagsEnum.nodes), nodesStr.toString()), GRALDE_RESULT_FILE);
     }
 
-    public void generateNodeConfigFiles(String destination, CordaNode cordaNode) {
+    public void generateNodeConfigFiles(Destination destination, CordaNode cordaNode) {
         String templatePath = (cordaNode instanceof NotaryCordaNode) ? NODE_NOTARY_CONFIG_TEMPLATE : NODE_CONFIG_TEMPLATE;
         String nodeConfig = populateTemplateWithTags(TemplateManager.getInstance().readTemplate(templatePath), cordaNode.getProperties());
-        Storage.getInstance().storeFile(destination, nodeConfig, cordaNode.getName() + CONFIG_FILE_EXTENSION);
+        destination.store(nodeConfig, cordaNode.getName() + CONFIG_FILE_EXTENSION);
     }
 
     private String populateTemplateWithTags(String template, Map<String, Object> tagsAndValues) {

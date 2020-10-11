@@ -4,6 +4,7 @@ import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import pl.gdynia.amw.dictionary.GenerationStatusEnum;
 import pl.gdynia.amw.dto.GenerationResult;
+import pl.gdynia.amw.model.Destination;
 import pl.gdynia.amw.model.node.CordaNode;
 
 import java.util.Collection;
@@ -13,10 +14,11 @@ public class CordaGenerator {
 
     private static CordaGenerator INSTANCE;
 
-    public GenerationResult generate(String destination, Collection<CordaNode> objects) {
+    public GenerationResult generate(Destination destination, Collection<CordaNode> objects) {
         try {
             NodeGenerator.getInstance().generateDeployNodesTask(destination, objects);
         } catch (Exception e) {
+            e.printStackTrace();
             return GenerationResult
                     .builder()
                     .status(GenerationStatusEnum.ERROR)
